@@ -10,4 +10,10 @@ angular.module("misPelisSeriesApp").service("apiService",["$http","configuracion
 
 		return $http.get(url)
 	};
+
+	//parapoder llegar a la función desde afuera
+	this.obtenerRutaImagen=function(tamanyo,ruta){
+		return configuracion.rutaImagenApi+tamanyo+ruta;
+	}
+
 }]);
