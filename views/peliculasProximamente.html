@@ -1,7 +1,7 @@
 <div>
 	<table class="table table-striped">
 		<tbody>
-			<tr ng-repeat="pelicula in peliculas | orderBy:'release_date'">
+			<tr ng-repeat="pelicula in peliculas">
 	  			<td>{{pelicula.title}}</td>
 	  			<td>{{pelicula.release_date | date:'dd/MM/yy' | fechaEstreno}}</td><!--Sin el parámetro 'dd/MM/yy' se ve más bonito xD-->
 	  		</tr>

@@ -1,11 +1,12 @@
 angular.module("misPelisSeriesApp")
-.controller("peliculasProximamenteController", ["$scope","apiService",function($scope,apiService){
+.controller("peliculasProximamenteController", ["$scope","apiService","$filter",function($scope,apiService,$filter){
 	
 	apiService
 	.consultaApi("movie/upcoming")
 	.then(
 		function(resultado){
-			$scope.peliculas=resultado.data.results;
+			$scope.peliculas=$filter("orderBy")(resultado.data.results,'release_date');
+
 		},
 		function(){
 			alert("error")
