@@ -1,14 +1,14 @@
 angular.module("misPelisSeriesApp")
-.controller("peliculasProximamenteController", ["$scope","$http",function($scope,$http){
+.controller("peliculasProximamenteController", ["$scope","apiService",function($scope,apiService){
 	
-	$http
-	.get("")
+	apiService
+	.consultaApi("movie/upcoming")
 	.then(
-		function(){
-
+		function(resultado){
+			$scope.peliculas=resultado.data.results;
 		},
 		function(){
-
+			alert("error")
 		}
 	);
 
