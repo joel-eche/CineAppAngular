@@ -1,6 +1,10 @@
+//Controlador para la vista de próximas películas
 angular.module("misPelisSeriesApp")
-.controller("peliculasProximamenteController", ["$scope","apiService","$filter",function($scope,apiService,$filter){
+.controller("peliculasProximamenteController", ["$scope","$filter","Peliculas",function($scope,$filter,Peliculas){
 	
+	$scope.peliculas=$filter("orderBy")(Peliculas.data.results,'release_date');
+
+	/*
 	apiService
 	.consultaApi("movie/upcoming")
 	.then(
@@ -9,8 +13,8 @@ angular.module("misPelisSeriesApp")
 
 		},
 		function(){
-			alert("error")
+			alert("error");
 		}
 	);
-
+	*/
 }]);
