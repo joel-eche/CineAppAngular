@@ -1,15 +1,11 @@
 angular.module("misPelisSeriesApp")
-.controller("peliculasCarteleraController", ["$scope","apiService",function($scope,apiService){
+.controller("peliculasCarteleraController", ["$scope","Peliculas","$location",function($scope,Peliculas,$location){
 	
-	apiService
-	.consultaApi("movie/now_playing")
-	.then(
-		function(resultado){
-			$scope.peliculas=resultado.data.results;
-		},
-		function(){
-			alert("error")
-		}
-	);
-
+	$scope.peliculas=Peliculas.data.results;
+	
+	$scope.verDetalle=function(id){
+		$location.path("/peliculas/detalles").search({
+			idPelicula:id
+		});
+	}
 }]);

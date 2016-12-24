@@ -1,10 +1,8 @@
 <div>
 	<table class="table table-striped">
 		<tbody>
-			<tr ng-repeat="pelicula in peliculas">
-	  			<td>{{pelicula.title}}</td>
-	  			<td>{{pelicula.release_date | date:'dd/MM/yy'}}</td>
-	  		</tr>
+            <tr ng-repeat="pelicula in peliculas" media-item datos="pelicula" al-seleccionar="verDetalle(mediaId)">
+            </tr>
 		</tbody>
 	</table>
 	

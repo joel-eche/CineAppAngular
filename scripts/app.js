@@ -28,7 +28,12 @@ angular.module("misPelisSeriesApp").config(["$routeSegmentProvider","$routeProvi
 	});
 	$routeSegmentProvider.within("peliculas").segment('cartelera',{
 		controller:"peliculasCarteleraController",
-		templateUrl:"views/peliculasCartelera.html"
+		templateUrl:"views/peliculasCartelera.html",
+        resolve:{
+			Peliculas:["apiService",function(apiService){
+				return apiService.consultaApi("movie/now_playing");
+			}]
+		}
 	});
 	$routeSegmentProvider.within("peliculas").segment('detalles',{
 		controller:"peliculasDetallesController",
