@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Películasy series</title>
 	<link rel="stylesheet" type="text/css" href="styles/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles/css/estilos.css">
 </head>
 <body>
 	<div class="container">
@@ -11,8 +12,10 @@
 			<h1>Películas y Series</h1>
 		</header>
 		<nav ng-controller="navegacionController">
-			<ul class="nav nav-tabs">
 
+			<h4 ng-bind="subtitulo">
+			</h4>
+			<ul class="nav nav-tabs">
 				<li ng-class="{'active':rutaEsPeliculas()}">
 					<a href="#/peliculas">Películas</a>
 				</li>
@@ -49,6 +52,7 @@
 <!--Directives-->
 <script type="text/javascript" src="scripts/directives/mediaItem.js"></script>
 <script type="text/javascript" src="scripts/directives/votacion.js"></script>
+<script type="text/javascript" src="scripts/directives/generos.js"></script>
     
 </body>
 </html>

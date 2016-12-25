@@ -2,7 +2,7 @@ angular.module("misPelisSeriesApp")
 .directive("votacion",["$compile",function($compile){
     return {
         restrict:"AE",
-        replace:true,
+        replace:true,//no es necesario,abajo el replaceWith hará esta chamba
         scope:{
             media:"@",
         },
